@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS</title>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    País: <input type="text" id="txtp"> 
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            var txtp = document.getElementById('txtp'); 
+            var res = document.getElementById('res');
+            var pais = txtp.value.trim(); // Pegando o valor do input e removendo espaços extras
+
+            res.innerHTML = `<p>Vivendo em <strong>${pais}</strong></p>`;
+            
+            if (pais.toLowerCase() === 'brasil') { // Comparação sem case sensitive
+                res.innerHTML += `<p>Você é Brasileiro</p>`;
+            } else {
+                res.innerHTML += `<p>Você é Estrangeiro</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
